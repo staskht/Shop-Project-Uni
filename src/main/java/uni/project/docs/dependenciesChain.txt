@@ -1,0 +1,14 @@
+StockService
+WarehouseService
+
+CashierService -> StockService, WarehouseService
+
+CashRegisterService -> CashierService, ReceiptFactory, Storage
+
+SoldProductsManager -> StockService, WarehouseService
+
+StoreCheckoutService -> CashRegisterService, SoldProductsManager
+
+StoreService -> StoreCheckoutService, StoreFinanceService
+
+Application -> StoreService, StockService, WarehouseService
